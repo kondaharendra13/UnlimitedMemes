@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: unlimited-memes-deployment
+  labels:
+    app: unlimited-memes
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: unlimited-memes
+  template:
+    metadata:
+      labels:
+        app: unlimited-memes
+    spec:
+      containers:
+      - name: unlimited-memes
+        image: bharath2236/unlimitedmemes
+        ports:
+        - containerPort: 80
